@@ -35,6 +35,7 @@ def get_lat_long(place_name: str) -> tuple[str, str]:
         response_text = f.read().decode('utf-8')
         response_data = json.loads(response_text)
     lat_long = tuple(response_data['features'][0]['geometry']['coordinates'])
+    lat_long = tuple(f"{coord:.4f}" for coord in lat_long)
     lat_long = tuple(reversed(lat_long))
     # print(type(lat_long))
     return lat_long
