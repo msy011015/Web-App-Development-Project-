@@ -1,14 +1,17 @@
-# Your API KEYS (you need to use your own keys - very long random characters)
-from config import MAPBOX_TOKEN, MBTA_API_KEY
+import urllib.request
+import json
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+from pprint import pprint
 
+# Your API KEYS (you need to use your own keys - very long random characters)
+MAPBOX_TOKEN = "pk.eyJ1IjoibXN5MDExMDE1IiwiYSI6ImNsZnpxZjFneTB3aGwzb3Bhb3RubGRvZ28ifQ.zFSapXqQ8ccVtVLWG4qIVA"
 
 # Useful URLs (you need to add the appropriate parameters for your requests)
 MAPBOX_BASE_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 MBTA_BASE_URL = "https://api-v3.mbta.com/stops"
 
-
 # A little bit of scaffolding if you want to use it
-
 
 def get_json(url: str) -> dict:
     """
@@ -25,8 +28,17 @@ def get_lat_long(place_name: str) -> tuple[str, str]:
 
     See https://docs.mapbox.com/api/search/geocoding/ for Mapbox Geocoding API URL formatting requirements.
     """
-    pass
-
+    replacement = "%20"
+    output_place = place_name.replace(" ", replacement)
+    query = output_place
+    url = f'{MAPBOX_BASE_URL}/{query}.json?access_token={MAPBOX_TOKEN}&types=poi'
+    with urllib.request.urlopen(url) as f:
+        response_text = f.read().decode('utf-8')
+        response_data = json.loads(response_text)
+    lat_long = tuple(response_data['features'][0]['geometry']['coordinates'])
+    # print(type(lat_long))
+    return lat_long
+        
 
 def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
     """
@@ -50,7 +62,7 @@ def main():
     """
     You can test all the functions here
     """
-    pass
+    print(get_lat_long("Babson College"))
 
 
 if __name__ == '__main__':
