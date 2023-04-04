@@ -1,8 +1,8 @@
 import urllib.request
 import json
 import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
 from pprint import pprint
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Your API KEYS (you need to use your own keys - very long random characters)
 MAPBOX_TOKEN = "pk.eyJ1IjoibXN5MDExMDE1IiwiYSI6ImNsZnpxZjFneTB3aGwzb3Bhb3RubGRvZ28ifQ.zFSapXqQ8ccVtVLWG4qIVA"
@@ -12,16 +12,7 @@ MAPBOX_TOKEN = "pk.eyJ1IjoibXN5MDExMDE1IiwiYSI6ImNsZnpxZjFneTB3aGwzb3Bhb3RubGRvZ
 MAPBOX_BASE_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 MBTA_BASE_URL = "https://api-v3.mbta.com/stops"
 
-# A little bit of scaffolding if you want to use it
-
-def get_json(url: str) -> dict:
-    """
-    Given a properly formatted URL for a JSON web API request, return a Python JSON object containing the response to that request.
-
-    Both get_lat_long() and get_nearest_station() might need to use this function.
-    """
     
-
 def get_lat_long(place_name: str) -> tuple[str, str]:
     """
     Given a place name or address, return a (latitude, longitude) tuple with the coordinates of the given place.
@@ -53,6 +44,7 @@ def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
     with urllib.request.urlopen(url) as f:
         response_text = f.read().decode('utf-8')
         response_data = json.loads(response_text)
+        # pprint (response_data)
         if len(response_data['data']) == 0:
             return None
         station_name = response_data['data'][0]['attributes']['name']
