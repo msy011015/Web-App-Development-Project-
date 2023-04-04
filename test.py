@@ -14,19 +14,17 @@ MAPBOX_TOKEN = "pk.eyJ1IjoibXN5MDExMDE1IiwiYSI6ImNsZnpxZjFneTB3aGwzb3Bhb3RubGRvZ
 MBTA_API_KEY = "fb950d9d0aaa490aac903e818b264994"
 query = "Babson%20College"
 url = f'{MAPBOX_BASE_URL}/{query}.json?access_token={MAPBOX_TOKEN}&types=poi'
-# print(url)
+print(url)
 
 def get_location(address):
     """
     get location information
     """
-    url = f"https://api.mapbox.com/geocoding/v5/mapbox.places?api_key={MAPBOX_TOKEN}&types=poi"
+    url = f"https://api.mapbox.com/geocoding/v5/mapbox.places/{address}.json?access_token={MAPBOX_TOKEN}&types=poi"
     with urllib.request.urlopen(url) as f:
         response_text = f.read().decode('utf-8')
         response_data = json.loads(response_text)
         return response_data
-
-location_data = get_location (query)
 
 def get_mbta_location(latitude, longtitude):
     """
@@ -36,22 +34,22 @@ def get_mbta_location(latitude, longtitude):
     with urllib.request.urlopen(url) as f:
         response_text = f.read().decode('utf-8')
         response_data = json.loads(response_text)
-    return response_data
+        return response_data
+
 
 if __name__ == "__main__":
-    query = "Babson College"
+    query = "Boston%20University"
     location_data = get_location(query)
+    # pprint (location_data)
     latitude,longtitude = location_data ["features"][0]["center"]
     mbta_station = get_mbta_location (latitude,longtitude)
     pprint(mbta_station)
 
-import urllib.parse
 
-query = "Babson College"
-types = "poi"
+# query = "Babson College"
+# types = "poi"
 
-params = {"access_token": MAPBOX_TOKEN,"types": types}
+# params = {"access_token": MAPBOX_TOKEN,"types": types}
+# query_string = urllib.parse.urlencode (params)
 
-query_string = urllib.parse.urlencode (params)
-
-url = f"{https://api.mapbox.com/geocoding/v5/mapbox.places}/{query}.json?{query_string}"
+# url = f"{https://api.mapbox.com/geocoding/v5/mapbox.places}/{query}.json?{query_string}"
