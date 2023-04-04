@@ -45,3 +45,13 @@ if __name__ == "__main__":
     mbta_station = get_mbta_location (latitude,longtitude)
     pprint(mbta_station)
 
+import urllib.parse
+
+query = "Babson College"
+types = "poi"
+
+params = {"access_token": MAPBOX_TOKEN,"types": types}
+
+query_string = urllib.parse.urlencode (params)
+
+url = f"{https://api.mapbox.com/geocoding/v5/mapbox.places}/{query}.json?{query_string}"
