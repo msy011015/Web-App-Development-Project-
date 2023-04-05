@@ -22,7 +22,7 @@
         color: darkblue;
         background-color: powderblue;
         font-family: "Pacifico", "consolas", sans-serif;
-        font-size: 50px;
+        font-size: 40px;
       }
       #li1 {
         color: lightskyblue;
@@ -33,6 +33,9 @@
       #li3 {
         color: royalblue;
       }
+      #li4 {
+        color: orange;
+      }
       li {
         font-family: "Indie Flower", "consolas", sans-serif;
         font-size: 30px;
@@ -42,7 +45,7 @@
   </head>
 
   <body>
-    <h1>MBTA Search Result:</h1>
+    <h1>MBTA Search Result - 3 Nearest Stations (From Near to Far)</h1>
     {% if results %}
     <ul>
       {% for result in results %}
@@ -50,6 +53,7 @@
         <li id="li1">Station Name: {{ result[0] }}</li>
         <li id="li2">Wheelchair Accessible: {{ result[1] }}</li>
         <li id="li3">Prediction Time: {{ result[2] }}</li>
+        <li id="li4">Can you catch it?? {{ result[3] }}</li>
       </ul>
       {% endfor %}
     </ul>
