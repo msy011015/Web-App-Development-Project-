@@ -81,6 +81,25 @@ def prediction(stopid):
                 predictions.append(None)
     return predictions
 
+def minutes_until_departure(prediction_time):
+    """
+    Given a departure time prediction, return the number of minutes until the vehicle departs.
+    """
+    if prediction_time is None:
+        return None
+    
+    # Convert departure time string to datetime object
+    departure_time = datetime.fromisoformat(prediction_time[:-6])
+    
+    # Calculate time difference in seconds and convert to minutes
+    time_diff = (departure_time - datetime.now()).total_seconds()
+    minutes = int(time_diff // 60)
+    
+    if minutes < 0:
+        return "The Bus Just Left"
+    else:
+        return f"{minutes} minutes left"
+
 
 def find_stop_near(place_name: str) -> tuple[str, bool]:
     """
@@ -106,8 +125,9 @@ def find_stop_near(place_name: str) -> tuple[str, bool]:
         stop_name = station[0]
         wheelchair_accessible = station[1]
         prediction_time = predictions[i]
+        minutes_left = minutes_until_departure(prediction_time)
         stops_with_predictions.append(
-            (stop_name, wheelchair_accessible, prediction_time))
+            (stop_name, wheelchair_accessible, prediction_time, minutes_left))
     return stops_with_predictions
 
 
@@ -118,7 +138,7 @@ def main():
     # print(get_lat_long("Babson College"))
     # print(get_lat_long("boston university"))
     # print(get_nearest_station("42.350692" ,"-71.1063435"))
-    print(find_stop_near('boston university'))
+    print(find_stop_near('boston commons'))
     # pprint(prediction(stop_id))
 
 
