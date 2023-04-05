@@ -1,6 +1,5 @@
 # WebApp-MBTA
- This is the base repo for Web App Developement project. Please read [instructions](instructions.md). 
-
+ This is a repository for Charlotte Chen and Jenny Ma's Web App Developement project.
 
 ## Project Writeup and Reflection
 
