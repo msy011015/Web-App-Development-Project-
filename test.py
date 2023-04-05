@@ -16,6 +16,7 @@ query = "Babson%20College"
 url = f'{MAPBOX_BASE_URL}/{query}.json?access_token={MAPBOX_TOKEN}&types=poi'
 print(url)
 
+
 def get_location(address):
     """
     get location information
@@ -25,6 +26,7 @@ def get_location(address):
         response_text = f.read().decode('utf-8')
         response_data = json.loads(response_text)
         return response_data
+
 
 def get_mbta_location(latitude, longtitude):
     """
@@ -41,8 +43,8 @@ if __name__ == "__main__":
     query = "Boston%20University"
     location_data = get_location(query)
     # pprint (location_data)
-    latitude,longtitude = location_data ["features"][0]["center"]
-    mbta_station = get_mbta_location (latitude,longtitude)
+    latitude, longtitude = location_data["features"][0]["center"]
+    mbta_station = get_mbta_location(latitude, longtitude)
     pprint(mbta_station)
 
 

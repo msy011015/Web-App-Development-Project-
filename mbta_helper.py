@@ -2,6 +2,7 @@ import urllib.request
 import json
 import ssl
 from pprint import pprint
+from datetime import datetime, timezone
 ssl._create_default_https_context = ssl._create_unverified_context
 
 # Your API KEYS (you need to use your own keys - very long random characters)
@@ -50,13 +51,13 @@ def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
         # create a list to hold 3 nearest stations
         nearest_stations = []
         # if less than 3 then just find all
-        for i in range(min(3, len(response_data['data']))): 
+        for i in range(min(3, len(response_data['data']))):
             station_name = response_data['data'][i]['attributes']['name']
             wheelchair_accessible = response_data['data'][i]['attributes']['wheelchair_boarding'] == 1
             stop_id = response_data['data'][i]['id']
             # append the tuple to the list
             nearest_stations.append(
-                (station_name, wheelchair_accessible, stop_id)) 
+                (station_name, wheelchair_accessible, stop_id))
         return nearest_stations
 
 
@@ -105,8 +106,10 @@ def find_stop_near(place_name: str) -> tuple[str, bool]:
         stop_name = station[0]
         wheelchair_accessible = station[1]
         prediction_time = predictions[i]
-        stops_with_predictions.append((stop_name, wheelchair_accessible, prediction_time))
+        stops_with_predictions.append(
+            (stop_name, wheelchair_accessible, prediction_time))
     return stops_with_predictions
+
 
 def main():
     """
