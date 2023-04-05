@@ -2,6 +2,7 @@ import urllib.request
 import json
 import ssl
 from pprint import pprint
+from datetime import datetime, timezone
 ssl._create_default_https_context = ssl._create_unverified_context
 
 # Your API KEYS (you need to use your own keys - very long random characters)
@@ -54,13 +55,14 @@ def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
             nearest_stations.append((station_name, wheelchair_accessible))
         return nearest_stations
     
+    
 # def prediction(stopid):
 #     MBTA_API_KEY = "fb950d9d0aaa490aac903e818b264994"
 #     url = f"https://api-v3.mbta.com/predictions?api_key={MBTA_API_KEY}&sort=departure_time&filter%5Bstop%5D={stopid}"
 #     with urllib.request.urlopen(url) as f:
 #         response_text = f.read().decode('utf-8')
 #         response_data = json.loads(response_text)
-        
+
 
 def find_stop_near(place_name: str) -> tuple[str, bool]:
     """
@@ -71,6 +73,9 @@ def find_stop_near(place_name: str) -> tuple[str, bool]:
     latitude, longtitude = get_lat_long(place_name)
     res = get_nearest_station(latitude, longtitude)
     return res
+
+
+
 
 def main():
     """
