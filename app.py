@@ -11,10 +11,9 @@ def index():
 def MBTA():
     if request.method == "POST":
         place_name = str(request.form["place"])
-        result = find_stop_near(place_name)
-        if result:
-            station_name, wheelchair_accessible = result
-            return render_template("result.html", station_name = station_name, wheelchair_accessible = wheelchair_accessible )
+        results = find_stop_near(place_name)
+        if results:
+            return render_template("result.html",  results = results )
         else:
             return render_template("form.html", error = True)
     return render_template("form.html", error = None)
