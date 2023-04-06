@@ -138,7 +138,7 @@ def main():
     # print(get_lat_long("Babson College"))
     # print(get_lat_long("boston university"))
     # print(get_nearest_station("42.350692" ,"-71.1063435"))
-    print(find_stop_near('boston commons'))
+    print(find_stop_near('boston university'))
     # pprint(prediction(stop_id))
 
 
