@@ -19,6 +19,8 @@ After you finish the project, Please write a short document for reflection.
 
 2. Discuss your **team's work division**, including how the work was planned to be divided and how it actually happened. Address any issues that arose while working together and how they were addressed. Finally, discuss what you would do differently next time.
 
+    Initially, we were planning to do it together. However, it turns out after the work division, we were working independently which proves to be more efficient somehow. Jenny Ma is responsible for the codes related to getting the nearest stop, accessible devices, and prediction of arrival time. Charlotte is responsible for the codes related to test.py, real-time bus/subway/commuter-rail tracker, categorizing the transportation means (two functions which does not work in the end), making the prediciton of arrival time into an alert of time. Also, Jenny is responsible for making the website prettier. Together, we finished the reflections. 
+
 3. Discuss from a learning perspective, what you learned through this project and how you'll use what you learned going forward. Reflect on how ChatGPT helped you and what you wish you knew beforehand that could have helped you succeed. Consider including screenshots to demonstrate your project's progress and development.
 
 
