@@ -23,9 +23,11 @@ After you finish the project, Please write a short document for reflection.
 
 
  In this project, we found ChatGpt not very useful. Due to the project's numerous APIs and various types of documentation, we found it difficult to approach ChatGpt for the information we required. Instead of letting ChatGpt generate the code, we provided it with our code and asked it what the best approach was to achieve a particular goal, and then modifying it according to the provided method. Here is an example of the answer generated:
+ 
 ![images/general question.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/general%20question.png)
  
  However, ChatGpt is still a useful tool for learning new topics and debugging. While learning CSS, we questioned ChatGpt about expressions and what ChatGpt error messages signified.
+
 ![images/CSS.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/CSS.png)
 ![images/debug.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/debug.png)
 ![images/debug2.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/debug2.png)
