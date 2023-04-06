@@ -1,8 +1,9 @@
 # WebApp-MBTA
- This is the base repo for Web App Developement project. Please read [instructions](instructions.md). 
+ This is the base repo for Web App Developement project by Charlotte Chen and Jenny Ma.  
 
 
 ## Project Writeup and Reflection
+
 
 Write a summary of your project and your reflections on it in [`README.md`](README.md), using [Markdown format](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (1 per team, not 1 per person).The [`README.md`](README.md) file should include the following sections:
 
