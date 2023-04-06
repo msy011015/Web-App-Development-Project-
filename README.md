@@ -6,7 +6,7 @@
 
 **1. Project Overview**   
 
- This project develops a web application that leverages the Mapbox and MBTA APIs to determine the latitude and longitude of a user-specified location and identify the three nearest MBTA stops, along with their wheelchair accessibility status. Additionally, the application provides a predictive model for the next train departure time and how long it will be before the train leaves. Flask was utilized to create a user-friendly website that prompts the user for the desired location, and presents the 3 nearest MBTA stop information on a separate page, while also informing the user if no relevant MBTA stops were found.
+ This project develops a web application that leverages the Mapbox and MBTA APIs to determine the latitude and longitude of a user-specified location and identify the three nearest MBTA stops, along with their wheelchair accessibility status. Additionally, the application provides a predictive model for the next train departure time and how long it will be before the train leaves. Flask was utilized to create a user-friendly website that prompts the user for the desired location, and presents the 3 nearest MBTA stop information on a separate page, while also informing the user if no relevant MBTA stops were found. To enhance the user's experience, we have beautified the page with CSS by utilizing various colors, fonts, etc.
 
 **2. Reflection** (~3 paragraphs + screenshots)
 
@@ -21,8 +21,12 @@ After you finish the project, Please write a short document for reflection.
 
 3. Discuss from a learning perspective, what you learned through this project and how you'll use what you learned going forward. Reflect on how ChatGPT helped you and what you wish you knew beforehand that could have helped you succeed. Consider including screenshots to demonstrate your project's progress and development.
 
- In this project, we found ChatGpt not very useful. Due to the project's numerous APIs and various types of documentation, we found it difficult to approach ChatGpt for the information we required. Instead of letting ChatGpt generate the code, we provided it with our code and asked it what the best approach was to achieve a particular goal, and then modifying it according to the provided method. Here is an example of the answer generated:
 
-**Note**: 
-- Begin by including the names of all team members at the top of the document.
-- Make the `README.md` file clear and concise. There is no need to use fancy words or ChatGPT. 
+ In this project, we found ChatGpt not very useful. Due to the project's numerous APIs and various types of documentation, we found it difficult to approach ChatGpt for the information we required. Instead of letting ChatGpt generate the code, we provided it with our code and asked it what the best approach was to achieve a particular goal, and then modifying it according to the provided method. Here is an example of the answer generated:
+![images/general question.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/general%20question.png)
+ 
+ However, ChatGpt is still a useful tool for learning new topics and debugging. While learning CSS, we questioned ChatGpt about expressions and what ChatGpt error messages signified.
+![images/CSS.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/CSS.png)
+![images/debug.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/debug.png)
+![images/debug2.png](https://github.com/msy011015/Web-App-Development-Project-/blob/main/images/debug2.png)
+
